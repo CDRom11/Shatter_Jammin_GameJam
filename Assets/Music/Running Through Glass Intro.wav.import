@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Running Through Glass Intro.wav-2d6a95f50f906b1918060fc50b823efb.sample"
+
+[deps]
+
+source_file="res://Assets/Music/Running Through Glass Intro.wav"
+dest_files=[ "res://.import/Running Through Glass Intro.wav-2d6a95f50f906b1918060fc50b823efb.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

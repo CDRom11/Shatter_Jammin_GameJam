@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/GLASS-SHATTER.mp3-e1134c9723a0224051a08c990267d32e.mp3str"
+
+[deps]
+
+source_file="res://Assets/GLASS-SHATTER.mp3"
+dest_files=[ "res://.import/GLASS-SHATTER.mp3-e1134c9723a0224051a08c990267d32e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

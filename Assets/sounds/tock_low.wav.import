@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/tock_low.wav-47d463ce51aa7aea22a03b2d5554ff13.sample"
+
+[deps]
+
+source_file="res://Assets/sounds/tock_low.wav"
+dest_files=[ "res://.import/tock_low.wav-47d463ce51aa7aea22a03b2d5554ff13.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
