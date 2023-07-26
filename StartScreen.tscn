@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Background_main.png" type="Texture" id=1]
+[ext_resource path="res://Assets/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/GLASS-SHATTER.mp3" type="AudioStream" id=3]
+[ext_resource path="res://Scripts/GlassShatter.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+font_data = ExtResource( 2 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StartScreen" type="Control" parent="."]
+margin_right = 1027.0
+margin_bottom = 720.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="StartScreen"]
+stream = ExtResource( 3 )
+
+[node name="TextureRect" type="TextureRect" parent="StartScreen"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="StartScreen"]
+margin_right = 1027.0
+margin_bottom = 720.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="StartScreen/TextureButton"]
+margin_top = 356.762
+margin_right = 1027.0
+margin_bottom = 716.762
+custom_fonts/font = SubResource( 1 )
+text = "TAP ANYWHERE TO CONTINUE"
+align = 1
+valign = 1
+
+[connection signal="pressed" from="StartScreen/TextureButton" to="StartScreen" method="_on_TextureButton_pressed"]

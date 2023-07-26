@@ -1,0 +1,136 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scripts/WinnerScreen.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Background/Winner.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Background/Congrats.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Background/Credits.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Background/play_again_or_quit.png" type="Texture" id=5]
+
+[sub_resource type="Animation" id=3]
+resource_name = "End"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprites/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Start"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprites/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "Winner"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprites/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 5, 7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[node name="Node" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Sprites" type="Node" parent="."]
+
+[node name="Winner" type="Sprite" parent="Sprites"]
+visible = false
+scale = Vector2( 0.392789, 0.490798 )
+texture = ExtResource( 2 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Congrats" type="Sprite" parent="Sprites"]
+visible = false
+scale = Vector2( 0.392789, 0.490798 )
+texture = ExtResource( 3 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Names" type="Sprite" parent="Sprites"]
+visible = false
+scale = Vector2( 0.392789, 0.490798 )
+texture = ExtResource( 4 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Buttons" type="Sprite" parent="Sprites"]
+visible = false
+position = Vector2( 3, 0 )
+scale = Vector2( 0.391638, 0.490798 )
+texture = ExtResource( 5 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="Sprites"]
+margin_right = 1024.0
+margin_bottom = 720.0
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Credits" type="AnimationPlayer" parent="."]
+anims/End = SubResource( 3 )
+anims/Start = SubResource( 2 )
+anims/Winner = SubResource( 1 )
+
+[node name="PlayAgain" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 307.0
+margin_top = 266.0
+margin_right = 660.0
+margin_bottom = 464.0
+mouse_default_cursor_shape = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 561.0
+margin_top = 474.0
+margin_right = 689.0
+margin_bottom = 562.0
+mouse_default_cursor_shape = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="PlayAgain" to="." method="_on_PlayAgain_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
